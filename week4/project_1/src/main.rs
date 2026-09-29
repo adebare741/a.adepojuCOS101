@@ -1,22 +1,23 @@
 use std::io;
 
 fn main() {
-    // Read values of a, b, c
-    let mut input = String::new();
-
+    // Read a
     println!("Enter value of a:");
-    io::stdin().read_line(&mut input).unwrap();
-    let a: f64 = input.trim().parse().unwrap();
-    input.clear();
+    let mut input1 = String::new();
+    io::stdin().read_line(&mut input1).expect("Failed to read input");
+    let a: f64 = input1.trim().parse().expect("Failed to parse a");
 
+    // Read b
     println!("Enter value of b:");
-    io::stdin().read_line(&mut input).unwrap();
-    let b: f64 = input.trim().parse().unwrap();
-    input.clear();
+    let mut input2 = String::new();
+    io::stdin().read_line(&mut input2).expect("Failed to read input");
+    let b: f64 = input2.trim().parse().expect("Failed to parse b");
 
+    // Read c
     println!("Enter value of c:");
-    io::stdin().read_line(&mut input).unwrap();
-    let c: f64 = input.trim().parse().unwrap();
+    let mut input3 = String::new();
+    io::stdin().read_line(&mut input3).expect("Failed to read input");
+    let c: f64 = input3.trim().parse().expect("Failed to parse c");
 
     // Calculate discriminant
     let d = b * b - 4.0 * a * c;
@@ -31,4 +32,4 @@ fn main() {
     } else {
         println!("No real roots.");
     }
-}
+} 
